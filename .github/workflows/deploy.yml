@@ -48,8 +48,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-           fetch-depth: 0
         # Dynamically checkout the current branch (no ref specified means current branch)
 
       - name: Show current branch
