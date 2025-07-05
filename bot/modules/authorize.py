@@ -23,7 +23,7 @@ async def authorize(_, message: Message):
         msg = 'Already Authorized Mahesh Bae!'
     else:
         await update_user_ldata(id_, 'is_auth', True)
-        msg = 'Authorized Successfully By Mahesh Bae.'
+        msg = 'Authorized Successfully'
     msg = await sendMessage(msg, message)
     await auto_delete_message(message, msg)
 
@@ -39,9 +39,9 @@ async def unauthorize(_, message: Message):
         id_ = message.chat.id
     if id_ not in user_data or user_data.get(id_, {}).get('is_auth'):
         await update_user_ldata(id_, 'is_auth', False)
-        msg = 'Unauthorized Successfully Mahesh Bae.'
+        msg = 'Unauthorized Successfully.'
     else:
-        msg = 'Already Unauthorized By Mahesh Bae!'
+        msg = 'Already Unauthorized'
     msg = await sendMessage(msg, message)
     await auto_delete_message(message, msg)
 
